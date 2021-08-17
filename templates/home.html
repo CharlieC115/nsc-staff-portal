@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="back-pur">
+        <div class="container">
+            <!-- page headers -->
+            <div class="row">
+                <div class="col s12">
+                    <h1>Norfolk Snowsports Club</h1>
+                    <h2>Volunteer Hours</h2>
+                </div>
+            </div>
+            <!-- about this site -->
+            <div class="row">
+                <div class="col s12">
+                    <h3>About This Site</h3>
+                    <p class="justify">Welcome to Norfolk Snowsports Staff Portal. This site is where instructors can record their voluntered lessons and claim expenses. The current expense per voluntered hour as an instructor/coach is £4.80 with a minimum of £7.20 per lesson. For example if you are to do a one hour lesson you will recieve and expense of £7.20 whereas if you were to do a two hour lesson you will recieve £9.60. The mileage expense is £5 per trip. Please only claim mileage once per travel when you have travel to the club from home. We greatly appriciate all of our volunteers and theytime you give up to teach and coach at Norfolk Snowsports Club. If you have any question or need any help with this site please use the contact form below and a member of staff will get back to you shortly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact us form -->
+    <section class="contact-us">
+        <div class="container">
+            <h3 class="center-align pur-text">Contact Us</h3>
+            <form id="contact-form" onsubmit="return sendMail(this);">
+                <div class="row">
+                    <!-- first name -->
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-tag prefix pur-icon"></i>
+                        <input id="firstname" name="firstname" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z]{3,15}$" title="Must contain 3 to 15 characters" class="validate pur-text" required>
+                        <label class="pur-text" for="firstname">First Name</label>
+                    </div>
+                    <!-- last name -->
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-tag prefix pur-icon"></i>
+                        <input id="lastname" name="lastname" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z]{3,15}$" title="Must contain 3 to 15 characters" class="validate pur-text" required>
+                        <label class="pur-text" for="lastname">Last Name</label>
+                    </div>
+                    <!-- email address -->
+                    <div class="input-field col s12">
+                        <i class="fas fa-at prefix pur-icon"></i>
+                        <input id="emailaddress" name="emailaddress" type="text" minlength="5" maxlength="30"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        title="Must contain an @ and '.' Example: abc@def.eu" class="validate pur-text" required>
+                        <label class="pur-text" for="emailaddress">Email Address</label>
+                    </div>
+                    <!-- quesions -->
+                    <div class="input-field col s12">
+                        <i class="fas fa-question prefix pur-icon"></i>
+                        <textarea id="question" name="question" class="validate pur-text" required></textarea>
+                        <label class="pur-text" for="question">Question(s)</label>
+                    </div>
+                    <!-- submit button -->
+                    <div class="col s12 form-field center-align submit-btn">
+                        <button type="submit" class="btn">Submit Question</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

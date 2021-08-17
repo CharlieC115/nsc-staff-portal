@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="back-pur">
+        <div class="container">
+            <div class="row">
+                <h3 class="center-align">Edit Record</h3>
+                <form class="col s12" method="POST" action="{{ url_for('edit_record', lesson_id=lesson._id) }}">
+                    <!-- lesson date -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-calendar-alt prefix"></i>
+                            <input id="lesson_date" name="lesson_date" value="{{ lesson.lesson_date }}" type="text"
+                                class="datepicker validate" required>
+                            <label for="lesson_date">Lesson Date</label>
+                        </div>
+                    </div>
+                    <!-- start and finish time -->
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <i class="fas fa-clock prefix"></i>
+                            <input type="text" id="lesson_start" name="lesson_start" value="{{ lesson.lesson_start }}"
+                                class="timepicker" required>
+                            <label for="lesson_start">Start Time</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <i class="fas fa-clock prefix"></i>
+                            <input type="text" id="lesson_finish" name="lesson_finish" value="{{ lesson.lesson_finish }}"
+                                class="timepicker" required>
+                            <label for="lesson_finish">Finish Time</label>
+                        </div>
+                    </div>
+                    <!-- lesson hours -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-hourglass-start prefix"></i>
+                            <select id="lesson_hours" name="lesson_hours" class="validate" required>
+                                <option value="" disabled>Choose your option</option>
+                                <option value="{{ lesson.lesson_hours }}" selected>{{ lesson.lesson_hours }}</option>
+                                <option value="1">1</option>
+                                <option value="1.25">1.25</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2">2</option>
+                                <option value="2.5">2.5</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <label for="lesson_hours">Hours</label>
+                        </div>
+                    </div>
+                    <!-- lesson type -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-skiing prefix"></i>
+                            <select id="activity_name" name="activity_name" class="validate" required>
+                                <option value="" disabled>Choose your option</option>
+                                {% for activity in activities %}
+                                    {% if activity.activity_name == lesson.lesson_type %}
+                                        <option value="{{ activity.activity_name }}" selected>{{ activity.activity_name }}</option>
+                                    {% else %}
+                                        <option value="{{ activity.activity_name }}">{{ activity.activity_name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <label for="activity_name">Lesson Type</label>
+                        </div>
+                    </div>
+                    <!-- lesson mileage -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="switch">
+                                <i class="fas fa-exclamation-circle prefix"></i>
+                                <label for="lesson_mileage">
+                                    {% if lesson.lesson_mileage == 'Yes' %}
+                                    <input type="checkbox" id="lesson_mileage" name="lesson_mileage" checked>
+                                    {% else %}
+                                    <input type="checkbox" id="lesson_mileage" name="lesson_mileage">
+                                    {% endif %}
+                                    <span class="lever"></span>
+                                    Mileage?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- lesson expenses -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="switch">
+                                <i class="fas fa-exclamation-circle prefix"></i>
+                                <label for="lesson_expenses">
+                                    {% if lesson.lesson_expenses == 'Yes' %}
+                                        <input type="checkbox" id="lesson_expenses" name="lesson_expenses" checked>
+                                    {% else %}
+                                        <input type="checkbox" id="lesson_expenses" name="lesson_expenses">
+                                    {% endif %}
+                                        <span class="lever"></span> Expenses?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- cancel button -->
+                        <div class="col s6 center-align cus-btn">
+                            <a href="{{ url_for('lessons') }}" class="btn">
+                                Cancel <i class="fas fa-times-circle right"></i>
+                            </a>
+                        </div>
+                        <!-- edit button -->
+                        <div class="col s6 center-align cus-btn">
+                            <button type="submit" class="btn">
+                                Edit Record <i class="fas fa-edit right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

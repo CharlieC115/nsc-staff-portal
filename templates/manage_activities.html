@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="back-pur">
+        <div class="container">
+            <div class="row">
+                <h3 class="center-align">Manage Activities</h3>
+                <div class="col s12 center-align cus-btn">
+                    <a href="{{ url_for('new_activity') }}" class="btn">
+                        New Activity <i class="fas fa-plus-square"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <!-- activity cards -->
+                {% for activity in activities %}
+                    <div class="col s12 m3">
+                        <div class="center-align card-panel">
+                            <div>
+                                <span class="cus-card-text">{{ activity.activity_name }}</span>
+                            </div>
+                            <div class="card-action cus-btn-2">
+                                <a href="{{ url_for('edit_activity', activity_id=activity._id) }}" class="btn">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="back-pur">
+        <div class="container">
+            <!-- overall figures -->
+            <div class="row">
+                <h3 class="center-align">Statistics</h3>
+                <div class="col s12 m4 center-align">
+                    <h4>Hours to Date</h4>
+                    <p>{{ hours_total }}</p>
+                </div>
+                <div class="col s12 m4 center-align">
+                    <h4>Lesson Expense to Date</h4>
+                    <p>£{{ expense_total }}</p>
+                </div>
+                <div class="col s12 m4 center-align">
+                    <h4>Mileage Expense to Date</h4>
+                    <p>£{{ total_mileage }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="back-pur">
+        <div class="container">
+            <div class="row">
+                <!-- user profiles -->
+                <h3 class="center-align">User Profiles</h3>
+                <div class="col s12 lessons-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email Address</th>
+                                <th>Address Line 1</th>
+                                <th>Address Line 2</th>
+                                <th>Home City</th>
+                                <th>Home Post Code</th>
+                                <th>Edit?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                                <tr class="cus-tbl-btn">
+                                    <td>{{user.username}}</td>
+                                    <td>{{user.first_name}}</td>
+                                    <td>{{user.last_name}}</td>
+                                    <td>{{user.email_address}}</td>
+                                    <td>{{user.address_line_1}}</td>
+                                    <td>{{user.address_line_2}}</td>
+                                    <td>{{user.address_city}}</td>
+                                    <td>{{user.address_post_code}}</td>
+                                    <td><a href="{{ url_for('edit_profile', user_id=user._id) }}" class="btn">Edit</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

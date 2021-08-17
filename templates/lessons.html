@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="back-pur">
+        <div class="container">
+            <div class="row">
+                <h3 class="center-align">My Lessons</h3>
+            </div>
+            <div class="row">
+                <form action="{{ url_for('search')}}" method="post" class="col s12">
+                    <div class="row center-align">
+                        <!-- search records -->
+                        <div class="input-field col s12">
+                            <i class="fas fa-search prefix"></i>
+                            <input type="text" name="query" minlength="3" id="query" class="validate" required>
+                            <label for="query">Search Records</label>
+                        </div>
+                        <!-- reset button -->
+                        <div class="col s12 m6 cus-btn">
+                            <a href="{{ url_for('lessons') }}" class="btn">Reset</a>
+                        </div>
+                        <!-- search button -->
+                        <div class="col s12 m6 cus-btn"> 
+                            <button type="submit" class="btn">
+                                <i class="fas fa-search left"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col s12 lessons-table">
+                    <!-- table -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Date</th>
+                                <th>Start Time</th>
+                                <th>Finish Time</th>
+                                <th>Hours</th>
+                                <th>Expense Due</th>
+                                <th>Lesson Type</th>
+                                <th>Mileage?</th>
+                                <th>Claim Expenses?</th>
+                                <th>Total Due</th>
+                                <th>Edit?</th>
+                                <th>Delete?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for lesson in lessons %}
+                                {% if session.user|lower == lesson.entry_by|lower or session.user|lower == 'nscadmin' %}
+                                    <tr class="cus-tbl-btn">
+                                        <td>{{ lesson.entry_by }}</td>
+                                        <td>{{ lesson.lesson_date }}</td>
+                                        <td>{{ lesson.lesson_start }}</td>
+                                        <td>{{ lesson.lesson_finish }}</td>
+                                        <td>{{ lesson.lesson_hours }}</td>
+                                        <td>£{{ lesson.expense_due}}</td>
+                                        <td>{{ lesson.lesson_type }}</td>
+                                        <td>{{ lesson.lesson_mileage }}</td>
+                                        <td>{{ lesson.lesson_expenses }}</td>
+                                        <td>£{{ lesson.total_due }}</td>
+                                        <td><a href="{{ url_for('edit_record', lesson_id=lesson._id) }}" class="btn">Edit</a></td>
+                                        <td><a href="{{ url_for('delete_record', lesson_id=lesson._id) }}" class="btn" onclick="return confirm('Are you sure you want to delete this record?')">Delete</a>
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

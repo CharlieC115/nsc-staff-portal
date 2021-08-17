@@ -1,0 +1,407 @@
+/* sizing and display */
+
+.row {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #202945;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+section, footer {
+    padding: 30px 0;
+}
+
+/* flash messages */
+
+.flash-msg {
+    background-color: #202945;
+    padding: 72px 48px 8px 48px;
+    color: #FFF;
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+/* headings and paragraphs */
+
+h1, h2, h3, h4 {
+    color: #FFF;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+h1 {
+    font-size: 48px;
+    padding: 48px 0;
+}
+
+h2 {
+    font-size: 36px;
+    padding: 36px 0;
+}
+
+h3 {
+    font-size: 24px;
+    padding: 24px 0;
+}
+
+h4 {
+    font-size: 18px;
+    padding: 18px 0;
+}
+
+p, li {
+    font-size: 14px;
+    color: #FFF;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 14px;
+    letter-spacing: 2px;
+}
+
+/* input-fields */
+
+.input-field label, .input-field input, .input-field i{
+    color: #FFF;
+}
+
+.input-field label, .input-field input{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* buttons */
+
+.cus-btn a, .cus-btn button {
+    background-color: #cbd514;
+    color: #202945;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 20px;
+    border: 0;
+    width: 100%;
+}
+
+.cus-btn a:hover, .cus-btn button:hover {
+    background-color: #cbd514;
+    color: #202945;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 20px;
+    border: 0;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.cus-btn a:not(hover), .cus-btn button:not(hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+/* navabar and footer */
+
+nav {
+    background-color: #CE0E2D;
+    position: fixed;
+    z-index: 1;
+}
+
+.sidenav h3, .sidenav li a {
+    color: #202945;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
+
+.sidenav-overlay {
+    opacity: 0;
+}
+
+.brand-logo img {
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 10px solid #FFF;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.footer {
+    background-color: #CE0E2D;
+}
+
+/* section colours */
+
+.back-pur {
+    background-color: #202945;
+}
+
+/* home.html */
+/* home section */
+
+.justify {
+    text-align: justify;
+}
+
+/* contact us section  */
+
+.contact-us {
+    background-color: #cbd514;
+}
+
+.input-field .pur-icon, .input-field .pur-text, .pur-text{
+    color: #202945;
+}
+
+.input-field label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+textarea {
+    border-color: #202945;
+}
+
+.submit-btn button {
+    background-color: #202945;
+    color: #cbd514;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 10px;
+    margin: 20px;
+    border: 0;
+    line-height: 0;
+}
+
+.submit-btn button:hover {
+    background-color: #202945;
+    color: #cbd514;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 10px;
+    margin: 20px;
+    border: 0;
+    line-height: 0;
+    transform: scale(1.3);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.submit-btn button:not(hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+/* footer */
+
+a {
+    color: #FFF;
+}
+
+.social-link {
+    font-size: 24px;
+}
+
+.social-link:hover {
+    transform: scale(1.5, 1.5);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.social-link:not(hover) {
+    transform: scale(1, 1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+/* profile.html */
+
+.white-text {
+    color: #FFF;
+}
+
+/* manage activities */
+
+.card-panel {
+    background-color: #cbd514;
+    border-radius: 25px;
+    height: 150px;
+}
+
+.cus-card-text {
+    font-family: 'Work Sans', sans-serif;
+    color: #202945;
+    font-weight: 700;
+}
+
+.cus-btn-2 a {
+    background-color: #202945;
+    color: #cbd514;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 5px 0;
+    border: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.cus-btn-2 a:hover {
+    background-color: #202945;
+    color: #cbd514;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 5px;
+    border: 0;
+    text-align: center;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.cus-btn-2 a:not(hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+/* lessons */
+
+.lessons-table {
+    width: 100%;
+    overflow: auto;
+}
+
+th, td {
+    font-size: 14px;
+    color: #FFF;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+}
+
+th {
+    border-bottom: 1px solid #FFF;
+}
+
+.cus-tbl-btn a {
+    background-color: #cbd514;
+    color: #202945;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    border: 0;
+}
+
+.cus-tbl-btn a:hover {
+    background-color: #cbd514;
+    color: #202945;
+    font-size: 14px;
+    border-radius: 25px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    border: 0;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.cus-tbl-btn a:not(hover) {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+/* code copied from stack overflow and customised | scroll bar customisation */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #cbd514;
+}
+/* end of copied code */
+
+/* new records */
+
+.datepicker-date-display, .timepicker-digital-display {
+    background-color: #cbd514;
+}
+
+.datepicker-date-display .year-text, .date-text, .timepicker-span-minutes, .timepicker-span-hours, .timepicker-text-container {
+    color: #202945;
+}
+
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+    color: #cbd514;
+}
+
+.datepicker-day-button, .datepicker-table abbr {
+    color: #FFF;
+}
+
+.datepicker-calendar-container, .timepicker-analog-display {
+    background-color: #202945;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 403px) {
+    html {
+        width: 150vw;
+    }
+
+}

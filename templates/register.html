@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="back-pur">
+        <div class="container">
+            <div class="row">
+                <h3 class="center-align">Register</h3>
+                <form class="col s12" method="POST" action="{{ url_for('register') }}">
+                    <div>
+                        <!-- username -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-user-plus prefix"></i>
+                                <input id="username" name="username" type="text" minlength="8" maxlength="20"
+                                    pattern="[a-zA-Z0-9]{8,20}" title="Must contain 8 to 20 characters. Not case sensitive."
+                                    class="validate" required>
+                                <label for="username">Username</label>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-user-lock prefix"></i>
+                                <input id="password" name="password" type="password" minlength="8" maxlength="15"
+                                    pattern="(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+                                    title="Must contain at least one uppercase and one lowercase letter, and at least 8 or more characters"
+                                    class="validate" required>
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <!-- name -->
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="fas fa-user-tag prefix"></i>
+                                <input id="first_name" name="first_name" type="text" minlength="5" maxlength="15"
+                                    pattern="^[a-zA-Z]{3,15}$" title="Must contain 3 to 15 characters"
+                                    class="validate" required>
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="fas fa-user-tag prefix"></i>
+                                <input id="last_name" name="last_name" type="text" minlength="5" maxlength="15"
+                                    pattern="^[a-zA-Z]{3,15}$" title="Must contain 3 to 15 characters"
+                                    class="validate" required>
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <!-- email address -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-at prefix"></i>
+                                <input id="email_address" name="email_address" type="text" minlength="5" maxlength="30"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    title="Must contain an @ and '.' Example: abc@def.eu" class="validate"
+                                    required>
+                                <label for="email_address">Email Address</label>
+                            </div>
+                        </div>
+                        <!-- address -->
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="fas fa-map-marker-alt prefix"></i>
+                                <input id="address_line_1" name="address_line_1" type="text" minlength="3" maxlength="25"
+                                    pattern="^[a-zA-Z0-9\s]{3,25}$"
+                                    title="Can only contain letters, numbers and spaces. 3 to 25 characters."
+                                    class="validate" required>
+                                <label for="address_line_1">Address Line 1</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="fas fa-map-marker-alt prefix"></i>
+                                <input id="address_line_2" name="address_line_2" type="text" minlength="3" maxlength="25"
+                                    pattern="^[a-zA-Z0-9\s]{3,25}$"
+                                    title="Can only contain letters, numbers and spaces. 3 to 25 characters."
+                                    class="validate">
+                                <label for="address_line_2">Address Line 2</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="fas fa-map-marker-alt prefix"></i>
+                                <input id="address_city" name="address_city" type="text" minlength="3" maxlength="20"
+                                    pattern="^[a-zA-Z\s]{3,20}$"
+                                    title="Can only contain letters, numbers and spaces. 3 to 20 characters."
+                                    class="validate" required>
+                                <label for="address_city">City</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="fas fa-map-marker-alt prefix"></i>
+                                <input id="address_post_code" name="address_post_code" type="text" minlength="7"
+                                    maxlength="8" pattern="[A-Z]{1,2}[0-9]{1,2} [0-9][A-Z]{2}"
+                                    title="Must contain on capital letters and numbers with a single space. Example: AB9 0EH"
+                                    class="validate" required>
+                                <label for="address_post_code">Post Code</label>
+                            </div>
+                        </div>
+                        <!-- register -->
+                        <div class="row cus-btn">
+                            <button type="submit" class="col s12 btn">
+                                Register <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </from>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <p class="center-align">
+                        Already Register?
+                        <a href="{{ url_for('login') }}" class=""><u>Login</u></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
